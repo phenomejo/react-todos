@@ -27,9 +27,9 @@ const TodoItem = ({ todo }) => {
 
   return (
     <>
-      <div className="columns is-mobile is-centered">
+      <div className="columns is-desktop is-centered">
         <div className="column is-half">
-          <input type="text" className="input is-medium" value={text} onChange={e => setText(e.target.value)} />
+          <input type="text" className="input is-medium" placeholder="enter something..." value={text} onChange={e => setText(e.target.value)} />
         </div>
         <div className="column is-1">
           <button className="button is-info is-medium" onClick={addTodo}>ADD</button>
