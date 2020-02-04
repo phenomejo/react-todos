@@ -11,6 +11,12 @@ const TodoItem = ({ todo }) => {
   const dispatch = useDispatch()
   const newComp = hocEx(UseHoc, new Date().getTime())()
 
+  const onEnter = (e) => {
+    if (e.keyCode === 13) {
+      addTodo()
+    }
+  }
+
   const addTodo = () => {
     if (text.length > 0) {
       const payload = { id: todo.length + 1, text }
@@ -29,7 +35,7 @@ const TodoItem = ({ todo }) => {
     <>
       <div className="columns is-desktop is-centered">
         <div className="column is-half">
-          <input type="text" className="input is-medium" placeholder="enter something..." value={text} onChange={e => setText(e.target.value)} />
+          <input type="text" className="input is-medium" placeholder="enter something..." value={text} onChange={e => setText(e.target.value)} onKeyDown={onEnter} />
         </div>
         <div className="column is-1">
           <button className="button is-info is-medium" onClick={addTodo}>ADD</button>
