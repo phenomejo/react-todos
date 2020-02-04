@@ -13,7 +13,7 @@ const App = () => {
       <section className="section">
         <div className="container">
           <TodoItem todo={todo} />
-          { todo.length === 0 ? null : <TodoList todo={todo} /> }
+          {todo.length === 0 ? null : <TodoList todo={todo} />}
         </div>
       </section>
     </>
